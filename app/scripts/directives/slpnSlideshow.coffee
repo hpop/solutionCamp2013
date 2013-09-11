@@ -12,7 +12,7 @@ angular.module('SolutionCampApp')
     compile: (elem, attrs, transclude) ->
 
       return (scope, element, attrs) ->
-          scope.currentSlide = 15
+          scope.currentSlide = 0
           scope.slides = 0
 
           scope.keyDown = (e) ->
