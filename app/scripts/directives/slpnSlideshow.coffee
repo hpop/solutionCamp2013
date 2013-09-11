@@ -49,5 +49,13 @@ angular.module('SolutionCampApp')
           $timeout ->
             for element in element.find('code')
               hljs.highlightBlock(element)
+              $('body').swipe {
+                swipeLeft: ->
+                  scope.$apply ->
+                    next()
+                swipeRight: ->
+                  scope.$apply ->
+                    prev()
+              }
 
   )
