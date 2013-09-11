@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "silpion";
+  src: url("fonts/DINRoundPro.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "silpion-medium";
+  src: url("fonts/DINRoundPro-Medium.otf") format("opentype");
+}
+
+body {
+    background: #224022;
+    color: #333;
+    height: 100%;
+    font-family: "silpion", serif;
+  font-size: 30px;
+}
+
+html {
+  height: 100%;
+}
+
+h1, h2, h3 ,h4 {
+  margin-top: 0;
+  font-family: "silpion-medium", serif;
+}
+
+h1 {
+  font-size: 66px;
+}
+
+h2 {
+  font-size: 46px;
+  padding-bottom: 25px;
+}
+
+
+header {
+  position: absolute;
+  top: 7%;
+  left: 7%;
+  margin-top: -25px;
+}
+
+ul {
+  display: inline-block;
+}
+
+
+ul > li {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+
+.outer {
+  position:relative;
+  height: 100%;
+}
+
+
+.main-content {
+  position:absolute;
+  top:15%;
+  height:70%;
+  overflow: hidden;
+
+}
+
+.slideshow {
+  background-color: #8eaa20;
+  display: table;
+}
+
+
+
+.slide.active {
+  opacity: 1;
+  left: 0;
+}
+
+.slide.active ~ .slide {
+  left: 400px;
+}
+
+.slide {
+  display: table;
+  text-align: center;
+  position: absolute;
+  opacity: 0;
+  left: -400px;
+  transition-property: left, opacity;
+  transition-duration: 0.2s;
+
+  height: 100%;
+  width: 100%;
+  color:white;
+
+}
+
+.centered {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.sub-headline {
+  position: relative;
+  top: -100px;
+
+}
+
+pre, .example {
+  width: 600px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+pre {
+  padding: 0;
+}
+
+.green {
+  color: #224022 ;
+}
+
+.example ul > li {
+  margin-bottom: 3px;
+  font-size: 16px;
+}
+
+

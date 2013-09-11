@@ -1,0 +1,194 @@
+<header><img src="images/webseite-logo1.png" width="326" height="49"></header>
+
+<slpn-slideshow slides="slides" class="main-content col-xs-12">
+
+  <div>
+    <h1>Einführung in</h1>
+    <br>
+    <img src="images/AngularJS-large.png">
+  </div>
+
+  <div>
+    <h2>Was ist AngularJS?</h2>
+  </div>
+
+  <div>
+    <h3 class="sub-headline">Was ist AngularJS?</h3>
+    <ul>
+      <li>RIA</li>
+      <li>Single Page Applications</li>
+      <li>Google Mail</li>
+      <li>Facebook</li>
+    </ul>
+  </div>
+
+   <div>
+    <h2>Was ist AngularJS nicht?</h2>
+  </div>
+
+  <div>
+    <h3 class="sub-headline">Was ist AngularJS nicht?</h3>
+    <ul>
+      <li>Kein Framework zur Erweiterung klassischer Webseiten (jQuery)</li>
+      <li>Kein Baukasten für Webanwendungen (extJS)</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Konzepte</h1>
+    <p>Two Way Data Binding -- Dependency Injection</p>
+    <p>Directives -- Filter -- Services</p>
+  </div>
+
+  <div>
+    <h1>Directives</h1>
+  </div>
+
+  <div>
+    <h3 class="sub-headline">Directives</h3>
+    <ul>
+      <li>Erweiterung der HTML Syntax</li>
+      <li>Modularer Aufbau</li>
+      <li>Wiederverwendbarkeit</li>
+    </ul>
+
+  </div>
+
+  <div>
+    <div class="example">
+      <h4>script:</h4>
+      <pre ng-non-bindable><code class="coffeescript">
+scope.list = ['Willkommen', 'beim', 'SolutionsCamp', '2013']
+      </code></pre>
+    </div>
+
+    <div class="example">
+      <h4>html:</h4>
+      <pre ng-non-bindable><code class="html">
+&lt;ul&gt;
+  &lt;li ng-repeat=&apos;item in list&apos; ng-class=&quot;green: item == &apos;SolutionsCamp&apos;&quot;&gt;
+    {{ item }}
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </code></pre>
+    </div>
+
+    <div class="example">
+      <h4>output:</h4>
+      <ul>
+        <li ng-repeat='item in list' ng-class="{green: item == 'SolutionsCamp'}">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h1>Dependency Injection</h1>
+  </div>
+
+  <div>
+    <h3>Dependency Injection</h3>
+    <div class="example">
+      <h4>helper class:</h4>
+      <pre ng-non-bindable><code>
+  app.factory('helper', function() {
+    return { MY_IMPORTANT_CONSTANT: 42; }
+  });
+      </code></pre>
+    </div>
+
+    <div class="example">
+      <h4>controller class:</h4>
+      <pre ng-non-bindable><code>
+  app.controller('MainCtrl', function($scope, helper) {
+    helper.MY_IMPORTANT_CONSTANT
+  });
+      </code></pre>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sub-headline">Dependency Injection</h3>
+    <ul>
+      <li>Automatisches instanziieren von Objekten</li>
+      <li>Singeltons! Nur eine Instanz jeder Dependency</li>
+      <li>Testbarkeit</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Two Way Data Binding</h1>
+  </div>
+
+  <div>
+    <h3 class="sub-headline">Two Way Data Binding</h3>
+    <div class="example">
+    <h4>code:</h4>
+      <pre ng-non-bindable><code>
+  &lt;input type=&quot;text&quot; ng-model=&apos;name&apos;&gt;
+  &lt;div ng-class=&quot;{green: name == &apos;silpion&apos;}&quot;&gt;Hallo: {{ name }}&lt;/div&gt;
+      </code></pre>
+    </div>
+    <br>
+    <div class="example">
+    <h4>output:</h4>
+      <input type="text" ng-model='name'>
+      <br>
+      <br>
+      <div ng-class="{green: name == 'silpion'}">Hallo: {{ name }}</div>
+    </div>
+
+  </div>
+
+  <div>
+    <h1>Filter</h1>
+  </div>
+
+  <div>
+    <h3>Filter</h3>
+    <div class="example">
+      <h4>code:</h4>
+      <pre ng-non-bindable><code class="javascript">
+  scope.list = ['Willkommen', 'beim', 'SolutionsCamp', '2013']
+      </code></pre>
+    </div>
+    <div class="example">
+      <h4>html:</h4>
+      <pre ng-non-bindable><code>
+&lt;input ng-model=&quot;searchTxt&quot;&gt;
+&lt;ul&gt;
+  &lt;li ng-repeat=&quot;item in list | filter:searchTxt&quot;&gt;
+    {{item | uppercase}}
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </code></pre>
+    </div>
+    <br>
+    <div class="example" style="height: 123px">
+      <h4>output:</h4>
+      <input class="pull-left" ng-model="searchTxt">
+      <ul>
+        <li ng-repeat="item in list | filter:searchTxt">{{item | uppercase}}</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div>
+    <h1>Danke!</h1>
+    <p>
+      Diese Präsentation ist natürlich in AngularJS geschrieben.<br>
+      github.com/hpop/solutionCamp2013
+    </p>
+  </div>
+
+
+
+
+
+
+</slpn-slideshow>
+
+
+<footer>
+
+</footer>
