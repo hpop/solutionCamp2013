@@ -8,3 +8,5 @@ app/bower_components
 .DS_Store
 *.iml
 atlassian-ide-plugin.xml
+/app/styles/fonts/DINRoundPro-Medium.otf
+/app/styles/fonts/DINRoundPro.otf
